@@ -3,8 +3,9 @@ _fibonacci = {1: 2, 2: 3}
 
 function isMergeable(x, y) {
   if (x > y) [x, y] = [y, x]
-  if (_fibonacci[x] === y && !_fibonacci[y]) _fibonacci[y] = x + y
-  return _fibonacci[x] === y || (x === 1 && y == 1)
+  // if (_fibonacci[x] === y && !_fibonacci[y]) _fibonacci[y] = x + y
+  // return _fibonacci[x] === y || (x === 1 && y == 1)
+  return Math.round(x * (1 + Math.sqrt(5)) / 2) === y || (x === 1 && y == 1)
 }
 
 function GameManager(size, InputManager, Actuator, StorageManager) {
